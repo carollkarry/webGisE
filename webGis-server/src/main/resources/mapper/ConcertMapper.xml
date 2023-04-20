@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.ConcertMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.server.pojo.Concert">
+        <id column="id" property="id" />
+        <result column="categoryname" property="categoryname" />
+        <result column="actors" property="actors" />
+        <result column="pricestr" property="pricestr" />
+        <result column="verticalpic" property="verticalpic" />
+        <result column="cityname" property="cityname" />
+        <result column="showstatus" property="showstatus" />
+        <result column="venue" property="venue" />
+        <result column="showtime" property="showtime" />
+        <result column="cityid" property="cityid" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        categoryname, actors, pricestr, verticalpic, cityname, showstatus, venue, showtime, cityid, id, name
+    </sql>
+
+</mapper>
