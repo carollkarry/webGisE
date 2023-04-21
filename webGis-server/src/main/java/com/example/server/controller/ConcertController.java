@@ -53,14 +53,5 @@ public class ConcertController {
         return allConcertActor;
     }
 
-    @ApiOperation(value = "各市演唱会数量")
-    @GetMapping("/getConcertNumByCity")
-    public Integer getConcertNumByCity(@RequestParam String cityname){
-        QueryWrapper<Concert> queryWrapper=new QueryWrapper<>();
-        queryWrapper.eq("cityname",cityname);
-        List<Concert> allConcertActor=concertMapper.selectList(queryWrapper);
-        return allConcertActor.size();
-
-    }
 
 }
