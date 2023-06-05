@@ -43,6 +43,15 @@ public class ConcertController {
         return allConcert;
     }
 
+    @ApiOperation(value = "按地点查找演唱会")
+    @GetMapping("/getConcernByVenue")
+    public List<Concert> getConcertByVenue(@RequestParam String venue){
+        QueryWrapper<Concert> queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("venue",venue);
+        List<Concert> allConcert=concertMapper.selectList(queryWrapper);
+        return allConcert;
+    }
+
     @ApiOperation(value = "按艺人查询演唱会信息")
     @GetMapping("/getConcernByActor")
     public List<Concert> getConcertByActor(@RequestParam String actors){
@@ -53,5 +62,37 @@ public class ConcertController {
         return allConcertActor;
     }
 
-
+    @ApiOperation(value = "艺人轨迹展示")
+    @GetMapping("/getActorRoutine")
+    public List<Concert> getActorRoutine(@RequestParam String actor){
+        QueryWrapper<Concert> queryWrapper=new QueryWrapper<>();
+        queryWrapper.like("actors",actor);
+        List<Concert> allActor=concertMapper.selectList(queryWrapper);
+        List<Concert> allActorTemp=allActor;
+        for(Concert concert:allActorTemp){
+            //正则表达式切割字符串
+            String [] time=concert.getShowtime().split("\\.| |\\-");
+            String tt="";
+            /**
+             * 处理时间，转换格式为YY-MM-DD
+             */
+            for(int i=0;i<2;i++){
+                String temp=time[i]+"-";
+                tt+=temp;
+            }
+            tt+=time[2];
+            concert.setShowtime(tt);
+        }
+        /**
+         * 根据时间进行排序
+         */
+        allActorTemp.sort((t1, t2) -> t1.getShowtime().compareTo(t2.getShowtime()));
+        return allActorTemp;
+    }
+//
+//    @ApiOperation(value = "按价格查询")
+//    @GetMapping("/getConcertByPrice")
+//    public List<Concert> getConcertByPrice(@RequestParam String lowPrice,String topPrice){
+//
+//    }
 }

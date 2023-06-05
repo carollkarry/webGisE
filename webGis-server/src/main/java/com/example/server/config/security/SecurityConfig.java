@@ -62,7 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/concert",
                 "/concert/getConcertByCity",
                 "/concert/getConcernByActor",
-                "/citycount/getConcertNumByCity"
+                "/citycount/getConcertNumByCity",
+                "/citycount/getConcertCity",
+                "/concert/getConcernByVenue",
+                "/concert/getActorRoutine"
         );
     }
 

@@ -34,7 +34,6 @@ public class ConcertServiceImpl extends ServiceImpl<ConcertMapper, Concert> impl
         if(concert.getShowtime()=="null"){
             return RespBean.error("时间为空");
         }
-
         concertMapper.insert(concert);
         return RespBean.success("插入成功！");
     }
