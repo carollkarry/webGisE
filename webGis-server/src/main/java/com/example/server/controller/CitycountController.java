@@ -3,17 +3,13 @@ package com.example.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.server.mapper.CitycountMapper;
-import com.example.server.mapper.ConcertMapper;
 import com.example.server.pojo.Citycount;
-import com.example.server.pojo.Concert;
 import com.example.server.service.ICitycountService;
-import com.example.server.service.IConcertService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;

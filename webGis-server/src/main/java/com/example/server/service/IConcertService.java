@@ -4,7 +4,6 @@ import com.example.server.pojo.Concert;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.server.pojo.RespBean;
 
-import java.awt.image.RescaleOp;
 import java.util.List;
 
 /**
@@ -13,7 +12,7 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-04-21
+ * @since 2023-06-08
  */
 public interface IConcertService extends IService<Concert> {
     RespBean concert(Concert concert);

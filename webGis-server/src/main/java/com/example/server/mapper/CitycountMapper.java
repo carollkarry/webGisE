@@ -2,7 +2,6 @@ package com.example.server.mapper;
 
 import com.example.server.pojo.Citycount;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.server.pojo.Concert;
 
 import java.util.List;
 
@@ -17,5 +16,6 @@ import java.util.List;
 public interface CitycountMapper extends BaseMapper<Citycount> {
     List<Citycount> getCityCount();
     //update
+
 
 }

@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author carollkarry
- * @since 2023-04-21
+ * @since 2023-06-08
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -25,21 +25,25 @@ public class Concert implements Serializable {
 
     private String categoryname;
 
-    private String actors;
-
     private String pricestr;
 
     private String verticalpic;
 
     private String cityname;
 
+    private Integer price;
+
     private String showstatus;
 
     private String venue;
 
+    private String actors;
+
     private String showtime;
 
-    private String cityid;
+    private Integer pricehigh;
+
+    private String subcategoryname;
 
     private String id;
 

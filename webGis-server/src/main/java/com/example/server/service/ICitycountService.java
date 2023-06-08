@@ -2,7 +2,6 @@ package com.example.server.service;
 
 import com.example.server.pojo.Citycount;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.server.pojo.Concert;
 import com.example.server.pojo.RespBean;
 
 import java.util.List;

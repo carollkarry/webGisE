@@ -1,6 +1,5 @@
 package com.example.server.service.impl;
 
-import com.example.server.mapper.ConcertMapper;
 import com.example.server.pojo.Citycount;
 import com.example.server.mapper.CitycountMapper;
 import com.example.server.pojo.RespBean;
@@ -41,4 +40,5 @@ public class CitycountServiceImpl extends ServiceImpl<CitycountMapper, Citycount
     public List<Citycount> getCityCount() {
         return citycountMapper.getCityCount();
     }
+
 }

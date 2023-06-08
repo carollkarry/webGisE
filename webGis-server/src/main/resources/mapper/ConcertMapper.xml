@@ -4,22 +4,24 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.example.server.pojo.Concert">
-        <id column="id" property="id" />
         <result column="categoryname" property="categoryname" />
-        <result column="actors" property="actors" />
         <result column="pricestr" property="pricestr" />
         <result column="verticalpic" property="verticalpic" />
         <result column="cityname" property="cityname" />
+        <result column="price" property="price" />
         <result column="showstatus" property="showstatus" />
         <result column="venue" property="venue" />
+        <result column="actors" property="actors" />
         <result column="showtime" property="showtime" />
-        <result column="cityid" property="cityid" />
+        <result column="pricehigh" property="pricehigh" />
+        <result column="subcategoryname" property="subcategoryname" />
+        <result column="id" property="id" />
         <result column="name" property="name" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        categoryname, actors, pricestr, verticalpic, cityname, showstatus, venue, showtime, cityid, id, name
+        categoryname, pricestr, verticalpic, cityname, price, showstatus, venue, actors, showtime, pricehigh, subcategoryname, id, name
     </sql>
 
 </mapper>
