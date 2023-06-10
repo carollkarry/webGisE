@@ -68,7 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/concert/getActorRoutine",
                 "/concert/getConcertByCategory",
                 "/concert/getConcertByPrice",
-                "/concert/getConcertByTime"
+                "/concert/getConcertByTime",
+                "/cityVisual/getWeather"
         );
     }
 

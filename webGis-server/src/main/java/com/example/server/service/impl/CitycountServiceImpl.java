@@ -2,6 +2,7 @@ package com.example.server.service.impl;
 
 import com.example.server.pojo.Citycount;
 import com.example.server.mapper.CitycountMapper;
+import com.example.server.pojo.Concert;
 import com.example.server.pojo.RespBean;
 import com.example.server.service.ICitycountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -16,10 +17,11 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-04-21
+ * @since 2023-06-11
  */
 @Service
 public class CitycountServiceImpl extends ServiceImpl<CitycountMapper, Citycount> implements ICitycountService {
+
 
     @Autowired
     private CitycountMapper citycountMapper;
@@ -29,9 +31,6 @@ public class CitycountServiceImpl extends ServiceImpl<CitycountMapper, Citycount
         if(citycount.getName()=="null"){
             return RespBean.error("城市名为空");
         }
-        if(citycount.getCount()=="null"){
-            return RespBean.error("数量为空");
-        }
         citycountMapper.insert(citycount);
         return RespBean.success("插入成功！");
     }
@@ -40,5 +39,4 @@ public class CitycountServiceImpl extends ServiceImpl<CitycountMapper, Citycount
     public List<Citycount> getCityCount() {
         return citycountMapper.getCityCount();
     }
-
 }

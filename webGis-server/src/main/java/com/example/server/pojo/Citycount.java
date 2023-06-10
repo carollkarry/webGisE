@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author carollkarry
- * @since 2023-04-21
+ * @since 2023-06-11
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -25,7 +25,7 @@ public class Citycount implements Serializable {
 
     private String name;
 
-    private String count;
+    private Integer count;
 
 
 }

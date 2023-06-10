@@ -6,7 +6,6 @@ import com.example.server.mapper.ConcertMapper;
 import com.example.server.pojo.Concert;
 import com.example.server.service.IConcertService;
 import io.swagger.annotations.ApiOperation;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -121,4 +118,5 @@ public class ConcertController {
         List<Concert> allConcert=concertMapper.selectList(queryWrapper);
         return allConcert;
     }
+
 }
