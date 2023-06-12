@@ -76,7 +76,7 @@ public class OtherController {
         return weathers;
     }
 
-    public static void main(String[] args){
-        GetCityWeather("北京", "2022-03-13");
-    }
+//    public static void main(String[] args){
+//        GetCityWeather("北京", "2022-03-13");
+//    }
 }
