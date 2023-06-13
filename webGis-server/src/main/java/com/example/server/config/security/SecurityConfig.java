@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/user/UserSpaceInfo",
                 "/user/UserAll",
                 "/user/UserGetInfo",
-                "/other/GetWeather"
+                "/cityVisual/getWeather"
         );
     }
 
