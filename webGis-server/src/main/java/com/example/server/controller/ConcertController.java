@@ -121,4 +121,14 @@ public class ConcertController {
         List<Concert> allConcert=concertMapper.selectList(queryWrapper);
         return allConcert;
     }
+
+    @ApiOperation(value = "获取所有演唱会")
+    @GetMapping("/getAllConcert")
+    public List<Concert> getAllConcert(){
+        QueryWrapper<Concert> queryWrapper=new QueryWrapper<>();
+        List<Concert> allConcert = concertMapper.selectList(queryWrapper);
+
+        return allConcert;
+    }
+
 }
