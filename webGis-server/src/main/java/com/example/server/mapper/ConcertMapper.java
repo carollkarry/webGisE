@@ -15,4 +15,6 @@ import java.util.List;
  */
 public interface ConcertMapper extends BaseMapper<Concert> {
       List<Concert> getAllConcert();
+
+
 }

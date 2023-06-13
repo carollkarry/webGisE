@@ -38,7 +38,6 @@ public class ConcertServiceImpl extends ServiceImpl<ConcertMapper, Concert> impl
         concertMapper.insert(concert);
         return RespBean.success("插入成功！");
     }
-
     @Override
     public List<Concert> getAllConcert() {
         return concertMapper.getAllConcert();

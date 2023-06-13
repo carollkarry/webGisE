@@ -17,4 +17,5 @@ import java.util.List;
 public interface IConcertService extends IService<Concert> {
     RespBean concert(Concert concert);
     List<Concert> getAllConcert();
+
 }

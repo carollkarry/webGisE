@@ -21,12 +21,11 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-04-21
+ * @since 2023-06-11
  */
 @RestController
 @RequestMapping("/citycount")
 public class CitycountController {
-
     @Autowired
     private ICitycountService iCitycountService;
 
@@ -52,6 +51,4 @@ public class CitycountController {
         }
         return listCity;
     }
-
-
 }
