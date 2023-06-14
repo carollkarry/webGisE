@@ -2,6 +2,8 @@ package com.example.server.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.example.server.mapper.CitycountMapper;
 import com.example.server.mapper.UserMapper;
 import com.example.server.pojo.User;
@@ -83,11 +85,30 @@ public class UserController {
         return true;
     }
 
-    @ApiOperation(value = "获取所有用户")
-    @GetMapping("/UserAll")
-    public List<User> userAll(){
-        QueryWrapper<User> queryWrapper=new QueryWrapper<>();
-        List<User> theUser= userMapper.selectList(queryWrapper);
-        return theUser;
+//    @ApiOperation(value = "获取所有用户")
+//    @GetMapping("/UserAll")
+//    public List<User> userAll(){
+//        QueryWrapper<User> queryWrapper=new QueryWrapper<>();
+//        List<User> theUser= userMapper.selectList(queryWrapper);
+//        return theUser;
+//    }
+
+    @ApiOperation(value = "用户密码更改")
+    @GetMapping("/UserChangePwd")
+    public boolean userChangePwd(@RequestParam String id, String newPwd, String oldPwd) {
+        // 创建UpdateWrapper对象，指定更新内容
+        UpdateWrapper<User> updateWrapper = Wrappers.update();
+        updateWrapper.eq("id", id).eq("password", oldPwd).set("password", newPwd);
+
+        // 调用update方法执行更新操作
+        int rows = userMapper.update(null, updateWrapper);
+
+        // 判断更新是否成功
+        if (rows > 0) {
+            System.out.println("更新成功");
+            return true;
+        }
+        System.out.println("更新失败");
+        return false;
     }
 }

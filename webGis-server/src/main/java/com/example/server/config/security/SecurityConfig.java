@@ -73,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/user/UserSignIn",
                 "/user/UserSignUp",
                 "/user/UserSpaceInfo",
-                "/user/UserAll",
+                "/user/UserChangePwd",
                 "/user/UserGetInfo",
                 "/cityVisual/getWeather"
         );
