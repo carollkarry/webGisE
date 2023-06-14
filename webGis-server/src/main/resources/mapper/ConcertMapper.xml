@@ -17,11 +17,13 @@
         <result column="subcategoryname" property="subcategoryname" />
         <result column="id" property="id" />
         <result column="name" property="name" />
+        <result column="longutide" property="longutide" />
+        <result column="lat" property="lat" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        categoryname, pricestr, verticalpic, cityname, price, showstatus, venue, actors, showtime, pricehigh, subcategoryname, id, name
+        categoryname, pricestr, verticalpic, cityname, price, showstatus, venue, actors, showtime, pricehigh, subcategoryname, id, name, longutide, lat
     </sql>
 
 </mapper>

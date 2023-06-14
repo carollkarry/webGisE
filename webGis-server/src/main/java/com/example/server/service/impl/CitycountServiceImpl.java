@@ -2,7 +2,6 @@ package com.example.server.service.impl;
 
 import com.example.server.pojo.Citycount;
 import com.example.server.mapper.CitycountMapper;
-import com.example.server.pojo.Concert;
 import com.example.server.pojo.RespBean;
 import com.example.server.service.ICitycountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

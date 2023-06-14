@@ -2,6 +2,7 @@ package com.example.server.service;
 
 import com.example.server.pojo.Concert;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.server.pojo.Concert;
 import com.example.server.pojo.RespBean;
 
 import java.util.List;
@@ -12,10 +13,10 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-06-08
+ * @since 2023-06-14
  */
 public interface IConcertService extends IService<Concert> {
+
     RespBean concert(Concert concert);
     List<Concert> getAllConcert();
-
 }

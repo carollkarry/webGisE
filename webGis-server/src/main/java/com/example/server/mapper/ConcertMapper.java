@@ -11,10 +11,8 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-06-08
+ * @since 2023-06-14
  */
 public interface ConcertMapper extends BaseMapper<Concert> {
-      List<Concert> getAllConcert();
-
-
+    List<Concert> getAllConcert();
 }

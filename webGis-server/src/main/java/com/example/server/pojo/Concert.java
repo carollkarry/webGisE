@@ -9,11 +9,11 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author carollkarry
- * @since 2023-06-08
+ * @since 2023-06-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -48,6 +48,10 @@ public class Concert implements Serializable {
     private String id;
 
     private String name;
+
+    private String longutide;
+
+    private String lat;
 
 
 }
