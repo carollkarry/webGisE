@@ -6,7 +6,6 @@ import com.example.server.mapper.ConcertMapper;
 import com.example.server.pojo.Concert;
 import com.example.server.service.IConcertService;
 import io.swagger.annotations.ApiOperation;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,12 +21,12 @@ import java.util.List;
  * </p>
  *
  * @author carollkarry
- * @since 2023-06-08
+ * @since 2023-06-14
  */
 @RestController
 @RequestMapping("/concert")
 public class ConcertController {
-     @Autowired
+    @Autowired
     private IConcertService iConcertService;
 
     @Autowired
@@ -130,5 +127,4 @@ public class ConcertController {
 
         return allConcert;
     }
-
 }

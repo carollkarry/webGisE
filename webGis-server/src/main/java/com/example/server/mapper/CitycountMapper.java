@@ -14,6 +14,8 @@ import java.util.List;
  * @since 2023-06-11
  */
 public interface CitycountMapper extends BaseMapper<Citycount> {
+
+
     List<Citycount> getCityCount();
     //update
 }
