@@ -33,23 +33,22 @@ public class OtherController {
     private static String WeatherCity = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 
     /**
-     * 获取某城市15日天气预报/某历史日期天气预报
+     * 获取某城市15日天气预报
      * @param CityName 城市中文名
-     * @param Date 查询日期
      * @return 结果天气列表
      */
     @ApiOperation(value = "查询天气")
     @GetMapping("/getWeather")
-    public List<Weather> GetCityWeather(@RequestParam String CityName, @RequestParam String Date){
+    public List<Weather> GetCityWeather(@RequestParam String CityName){
         List<Weather> weathers = new ArrayList<>();
         //将中文城市名转为拼音
         String CityPinyin = PinyinUtil.Chinese2Pinyin(CityName);
         //拼接url
         String WeatherUrl = WeatherCity+CityPinyin;
         //Date不为空，查询15天天气预报；否则查询Date对应日天气
-        if(!Date.equals("")){
-            WeatherUrl = WeatherUrl+"/"+Date+"/"+Date;
-        }
+//        if(!Date.equals("")){
+//            WeatherUrl = WeatherUrl+"/"+Date+"/"+Date;
+//        }
 
         //查询天气
         HashMap<String, String> kvs = new HashMap<>();
@@ -68,9 +67,9 @@ public class OtherController {
                 String date=dayValue.getString("datetime");
                 double maxtemp=dayValue.getDouble("tempmax");
                 double mintemp=dayValue.getDouble("tempmin");
-                String condition=dayValue.getString("conditions");
+                String condition=PinyinUtil.weather_EN2QI(PinyinUtil.SplitWeather(dayValue.getString("conditions")));
 
-                //System.out.println(CityName+" "+date+" "+maxtemp+" "+mintemp+" "+condition);
+                System.out.println("天气："+condition);
                 Weather weather = new Weather(CityName, date, maxtemp, mintemp, condition);
                 weathers.add(weather);
             }

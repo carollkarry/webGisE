@@ -54,4 +54,51 @@ public class PinyinUtil {
         }
         return output;
     }
+
+    /**
+     * 天气状况中英文转换
+     * @param weatherEN 天气状况英文描述
+     * @return 天气状况中文描述
+     */
+    public static String weather_EN2CN(String weatherEN){
+        String[] enWords = {"Clear", "Partially cloudy", "Mostly cloudy", "Overcast", "Rain", "Snow", "Freezing rain", "Sleet", "Hail", "Thunderstorm", "Fog", "Smoke", "Mist", "Haze"};
+        String[] cnWords = {"晴朗", "局部多云", "大部分多云", "阴天", "有雨", "有雪", "有冻雨", "有雨夹雪", "有冰雹", "有雷暴", "有雾", "有浓烟", "有薄雾", "有雾霾"};
+
+        String weatherCN = weatherEN;
+        for(int i = 0; i < enWords.length; i++) {
+            if(weatherCN.contains(enWords[i])) {
+                weatherCN.replace(enWords[i], cnWords[i]);
+            }
+        }
+
+        return weatherCN;
+    }
+
+    /**
+     * 只保留第一个天气状况
+     * @param weatherStr
+     * @return
+     */
+    public static String SplitWeather(String weatherStr){
+        int index = weatherStr.indexOf(",");
+        if (index == -1) {
+            return weatherStr;
+        } else {
+            return weatherStr.substring(0, index);
+        }
+    }
+
+    public static String weather_EN2QI(String weatherEN){
+        String[] enWords = {"Clear", "Partially cloudy", "Mostly cloudy", "Overcast", "Rain", "Snow", "Freezing rain", "Sleet", "Hail", "Thunderstorm", "Fog", "Smoke", "Mist", "Haze"};
+        String[] qiWords = {"sunny", "few-clouds", "partly-cloudy", "overcast", "rain", "snow", "freeze", "rain-and-snow", "hail", "thundershower", "foggy", "sand", "mist", "haze"};
+
+        String weatherQI = weatherEN;
+        for(int i = 0; i < enWords.length; i++) {
+            if(weatherQI.equals(enWords[i])) {
+                weatherQI = "qi-"+qiWords[i];
+            }
+        }
+
+        return weatherQI;
+    }
 }
